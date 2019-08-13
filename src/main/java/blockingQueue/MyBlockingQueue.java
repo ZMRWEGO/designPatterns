@@ -4,6 +4,9 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
+/**
+ * 这是一个循环阻塞队列
+ */
 public class MyBlockingQueue {
 
     private final Object[] items;
@@ -29,6 +32,7 @@ public class MyBlockingQueue {
     //添加元素的方法
     public void put(Object e) throws InterruptedException {
         final ReentrantLock lock = this.lock;
+        //获得该锁 除非当前线程中断
         lock.lockInterruptibly();
         try {
             while (count == items.length)
