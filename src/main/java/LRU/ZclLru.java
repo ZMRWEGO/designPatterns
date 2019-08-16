@@ -33,6 +33,7 @@ public class ZclLru {
         }
         if (size > capacity) {
             DlinkedNode node1 = removeEldest();
+            //map中要和链表同步
             cache.remove(node1.value);
             --size;
         } else {
