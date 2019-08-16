@@ -13,6 +13,7 @@ public class Generics<T> {
 
     public static void main(String[] args) {
         Generics<String> g = new Generics<String>();
+        //String a =(String) new Object();  此处强转就会报错
         System.out.println(g.test("fasdf"));
         System.out.println(g.test(g));
     }
