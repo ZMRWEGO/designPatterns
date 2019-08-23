@@ -6,6 +6,9 @@ import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * 这是一个循环阻塞队列
+ * 放入队列 putIndex++
+ * 取出队列 takeIndex++
+ * if index == length  ->  index=0
  */
 public class MyBlockingQueue {
 
