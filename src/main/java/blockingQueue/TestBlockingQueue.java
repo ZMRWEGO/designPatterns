@@ -23,7 +23,8 @@ class Producer extends Thread{
         while (true) {
             try {
                // Thread.sleep((long) Math.random() * 1000);
-                System.out.println(Thread.currentThread().getName()+"号正准备生产数据"+(TestBlockingQueue.blockingQueue.size()==3?"对列已满正在等待":"..."));
+                System.out.println(Thread.currentThread().getName()+"号正准备生产数据"+
+                        (TestBlockingQueue.blockingQueue.size()==3?"对列已满正在等待":"..."));
                 TestBlockingQueue.blockingQueue.put("byte");
                 System.out.println(Thread.currentThread().getName()
                         + "存入数据，" + "队列目前有" + TestBlockingQueue.blockingQueue.size()

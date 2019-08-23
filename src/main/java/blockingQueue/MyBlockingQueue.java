@@ -76,6 +76,7 @@ public class MyBlockingQueue {
         final Object[] items = this.items;
         @SuppressWarnings("unchecked")
         Object x =  items[takeIndex];
+        //这里注意  出队之后必须置为null
         items[takeIndex] = null;
         if (++takeIndex == items.length)
             takeIndex = 0;
